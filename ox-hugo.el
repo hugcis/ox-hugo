@@ -2074,7 +2074,7 @@ and rewrite link paths to make blogging more seamless."
                              (concat (file-name-sans-extension destination) ".md")
                            destination))))
              (if desc
-                 (format "[%s](%s)" desc path)
+                 (format "[%s]({{<relref \"%s\" >}})" desc path)
                (format "<%s>" path))))
           (`headline                 ;Links of type [[* Some heading]]
            (let ((title (org-export-data (org-element-property :title destination) info)))
